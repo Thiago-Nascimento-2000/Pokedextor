@@ -6,11 +6,11 @@ import { Main } from './pages/Main'
 function App() {
 
   return (
-    <div>
+    <main>
       <Nav/>
       <Main/>
       <Footer/>
-    </div>
+    </main>
   )
 }
 

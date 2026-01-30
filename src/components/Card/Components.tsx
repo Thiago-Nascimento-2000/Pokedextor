@@ -37,7 +37,7 @@ type ContainerProps = { children: React.ReactNode; background?: string };
 export const Container = ({ children, background = "default" }: ContainerProps) => {
   const bgClass = backgroundTypes[background] || backgroundTypes.default;
 
-  return <div className={`bg-cover flex-1 bg-center bg-no-repeat bg-blend-overlay backdrop-blur-md text-gray-900 w-65 h-fit pb-8 rounded-4xl gap-2 shadow-lg flex flex-col items-center justify-center m-3 ${bgClass}`}>{children}</div>;
+  return <div className={`bg-cover m-2 bg-center bg-no-repeat bg-blend-overlay backdrop-blur-md text-gray-900 w-65 h-fit pb-8 rounded-4xl gap-2 shadow-lg flex flex-col items-center justify-center ${bgClass}`}>{children}</div>;
 };
 
 type PokemonImageProps = {src: string, alt: string}
