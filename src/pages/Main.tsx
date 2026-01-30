@@ -3,7 +3,7 @@ import { FilterTypePokemon } from '../components/FilterTypePokemon/FilterTypePok
 
 export const Main = () => {
   return (
-    <main className='container mx-auto'>
+    <main className='container mx-auto px-19'>
       <FilterTypePokemon />
       <CardPokemon />
     </main>
