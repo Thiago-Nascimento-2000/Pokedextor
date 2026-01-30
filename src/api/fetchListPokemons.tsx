@@ -27,15 +27,13 @@ type Pokemon = {
   };
 
 const fetchListPokemons = () => {
-    const { setListPokemon } = useContext(AppContext) as AppContextType;
-
+    const { setListPokemon, limit, offset } = useContext(AppContext) as AppContextType;
           useEffect(() => {
               const fetchPokemonList = async () => {
-                const url = "https://pokeapi.co/api/v2/pokemon";
+                const base_url = "https://pokeapi.co/api/v2/pokemon";
                 try {
-                  const response = await fetch(url);
+                  const response = await fetch(`${base_url}?limit=${limit}&offset=${offset}`);
                   const data: ApiResponse = await response.json();
-          
                   const promisePokemon = Promise.all(
                     data.results.map((pokemon: Pokemon) =>
                       fetch(pokemon.url).then((res) => res.json()),
@@ -48,7 +46,7 @@ const fetchListPokemons = () => {
                 }
               };
               fetchPokemonList();
-            }, []);
+            }, [offset]);
 }
 
 export { fetchListPokemons };

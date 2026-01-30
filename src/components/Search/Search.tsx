@@ -20,7 +20,6 @@ const Search = () => {
             setInputValue(value);
        }
 
-
     return (
         <div>
             <h2 className="flex items-center gap-2"><PiMagnifyingGlassFill size={20}/> Encontre seu Pokemon:</h2>
